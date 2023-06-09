@@ -14,7 +14,7 @@ export default function CartItem({ id, img, title, price, amount }) {
           className="remove-btn"
           onClick={() => dispatch(removeItems(id))}
         >
-          remove
+          obrisi
         </button>
       </div>
       <div>

@@ -5,14 +5,14 @@ import { clearCart } from "../features/cart/cartSlice";
 export default function CartContainer() {
   const dispatch = useDispatch();
   const { cartItems, amount, total } = useSelector((store) => store.cart);
-  console.log(cartItems, amount, total);
+
   if (amount < 1) {
     return (
       <>
         <section className="cart-total">
           <header>
-            <h2>your bag</h2>
-            <h4 className="empty-cart">is currently empty</h4>
+            <h2>Racun</h2>
+            <h4 className="empty-cart">je prazan</h4>
           </header>
         </section>
       </>
@@ -21,7 +21,7 @@ export default function CartContainer() {
   return (
     <section className="cart">
       <header>
-        <h2>your bag</h2>
+        <h2>tvoj racun</h2>
       </header>
       <div>
         {cartItems.map((cartItem) => (
@@ -32,10 +32,10 @@ export default function CartContainer() {
         <div className="cart-total">
           <hr />
           <h4>
-            total <span>${total}</span>
+            ukupno <span>${total.toFixed(2)}</span>
           </h4>
           <button className="clear-btn" onClick={() => dispatch(clearCart())}>
-            CLEAR
+            ocisti torbu
           </button>
         </div>
       </footer>
